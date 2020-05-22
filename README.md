@@ -1,2 +1,2 @@
 # Magic-Numbers
-Creates a pattern using magic numbers
+(JAVA) Creates a pattern using magic numbers 
