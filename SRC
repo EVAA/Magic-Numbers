@@ -1,0 +1,252 @@
+/**SilajevMagicNumbers.java
+ * Stores values of numbers in a 2D array and then calculates the sum of the row, column and diagonal 
+ * to determine whether the values are magic squares. It then prints the values and the sum.
+ * @Evgenia Silajev
+ * @version 1.0 (Last Updated: Mar 29, 2020)
+ **/
+
+package silajevMagicNumbers;
+public class SilajevMagicNumbers {
+	  
+	 /** sumRow
+	 * Public scope, takes the values of only one row in an array which are stored 
+	 * in the parameters matrix and row. It then uses a for loop to add the values of the 
+	 * row and returns the sum.
+	 * 		@param matrix, row
+	 * 		Takes in an array and an int value
+	 *      @return sum
+	 *      returns the sum of a specific row in array
+	 */
+	public static int sumRow(int[][] arr, int row)
+	{
+	    int sum = 0;
+	    for(int i = 0; i < arr[row].length; i++)
+	    {
+	        sum += arr[row][i];
+	    }
+	    return sum;
+	}
+	 /** sumCol
+		 * Public scope, takes the values of only one column in an array which are stored 
+		 * in the parameters arr and col. It then uses a for loop to add the values of the 
+		 * column and returns the sum.
+		 * 		@param arr, col
+		 * 		Takes in an array and an int value
+		 *      @return sum1
+		 *      returns the sum of a specific column in array
+		 */
+	public static int sumCol(int arr[][], int col) 
+	{ 
+		 int sum1 = 0;
+		
+		 for(int i = 0; i < arr[col].length; i++)
+		    { 
+			 for (int col1 = 0; col1 < 1; col1++)
+	           {
+		        sum1 += arr[col][i];
+		    }
+		    }
+		    return sum1;
+	    
+	    } 
+	
+	/** sumDig
+	 * Public scope, takes the values of only one diagonal row in an array which are stored 
+	 * in the parameters arr and dig. It then uses a for loop to add the values of the 
+	 * diagonal row and returns the sum.
+	 * 		@param arr, dig
+	 * 		Takes in an array and an int value
+	 *      @return sum2
+	 *      returns the sum of a specific diagonal row in array
+	 */
+	public static int sumDig(int arr[][], int dig) 
+	{ 
+		 int sum2 = 0;
+		
+		 for(int i = 0; i < arr[dig].length; i++)
+		    { for (int col1 = 1; col1 <= 1; col1++)
+			if (i>= 2 && col1<= i-1)
+			 
+	           {
+		       
+		    }
+		    sum2 += arr[dig][i];
+		    }
+		    return sum2;
+	    
+	    } 
+	
+	
+	public static void main (String[] args)  
+	    { 
+	    	 
+		//2D arrays holding values of the magic squares
+		int[][] a = {
+	        	      {7, 6, 2}, 
+	        	      {0, 5, 10}, 
+	        	      {8, 4, 3}, 
+	        	};
+	        int[][] b = {
+	        	      {10, 7, 10}, 
+	        	      {9, 9, 9}, 
+	        	      {8, 11, 8}, 
+	        	};
+	        int[][] c = {
+	        	      {1, 33, 5}, 
+	        	      {17, 13, 9}, 
+	        	      {21, -7, 25}, 
+	        	};
+	        int[][] d = {
+	        	      {-1, -3, 4}, 
+	        	      {5, 0, -5}, 
+	        	      {-4, 3, 1}, 
+	        	};
+	        int[][] e = {
+	        	      {3, 7, 2}, 
+	        	      {3, 4, 5}, 
+	        	      {6, 1, 5}, 
+	        	};
+	        
+	        
+	        //Prints rows 1-3 of the first array
+	        for(int j = 0; j < a[0].length; j++)
+	        	   System.out.print(a[0][j]+" ");
+	        System.out.println();
+	        for(int j = 0; j < a[1].length; j++)
+	        	   System.out.print(a[1][j]+" ");
+	        System.out.println();
+	        for(int j = 0; j < a[2].length; j++)
+	        	   System.out.print(a[2][j]+" ");
+	        System.out.println();
+	       
+	        //Temp variables to store methods
+	        int j=0;
+	        int sumRow1= sumRow(a,j);
+	        int sumCol1= sumCol(a,j);
+	        int sumDigl= sumDig(a,j);
+	        
+	        //Checks of values from array a are magic squares
+	        if (sumRow1==sumCol1) {
+	        	if(sumRow1== sumDigl) {
+	        		if(sumCol1== sumDigl) {
+	        			System.out.print("The Magic sum is: " + sumRow1);//Only prints if values are magic sqrs
+	        			System.out.println();
+	        		}
+	        		
+	        	}
+	        	
+	        }
+	      //Prints rows 1-3 of the second array
+	        System.out.println();
+	        for(int j1 = 0; j1 < b[0].length; j1++)
+	        	   System.out.print(b[0][j1]+" ");
+	        System.out.println();
+	        for(int j1 = 0; j1 < b[1].length; j1++)
+	        	   System.out.print(b[1][j1]+" ");
+	        System.out.println();
+	        for(int j1 = 0; j1 < b[2].length; j1++)
+	        	   System.out.print(b[2][j1]+" ");
+	        System.out.println();
+	        
+	        //Temp variables to store methods
+	        int k=0;
+	        int sumRow2= sumRow(b,k);
+	        int sumCol2= sumCol(b,k);
+	        int sumDig2= sumDig(b,k);
+	        
+	        //Checks of values from array b are magic squares
+	        if (sumRow2==sumCol2) {
+	        	if(sumRow2== sumDig2) {
+	        		if(sumCol2== sumDig2) {
+	        			System.out.print("The Magic sum is: " + sumRow2);
+	        			System.out.println();
+	        		}
+	        		
+	        	}
+	        	
+	        }
+	      //Prints rows 1-3 of the third array
+	        System.out.println();
+	        for(int j1 = 0; j1 < c[0].length; j1++)
+	        	   System.out.print(c[0][j1]+" ");
+	        System.out.println();
+	        for(int j1 = 0; j1 < c[1].length; j1++)
+	        	   System.out.print(c[1][j1]+" ");
+	        System.out.println();
+	        for(int j1 = 0; j1 < c[2].length; j1++)
+	        	   System.out.print(c[2][j1]+" ");
+	        System.out.println();
+	        
+	        int n=0;
+	        int sumRow3= sumRow(c,n);
+	        int sumCol3= sumCol(c,n);
+	        int sumDig3= sumDig(c,n);
+	      //Checks of values from array c are magic squares
+	        if (sumRow3==sumCol3) {
+	        	if(sumRow3== sumDig3) {
+	        		if(sumCol3== sumDig3) {
+	        			System.out.print("The Magic sum is: " + sumRow3);
+	        			System.out.println();
+	        		}
+	        		
+	        	}
+	        	//Prints rows 1-3 of the fourth array
+	        	System.out.println();
+		        for(int j1 = 0; j1 < d[0].length; j1++)
+		        	   System.out.print(d[0][j1]+" ");
+		        System.out.println();
+		        for(int j1 = 0; j1 < d[1].length; j1++)
+		        	   System.out.print(d[1][j1]+" ");
+		        System.out.println();
+		        for(int j1 = 0; j1 < d[2].length; j1++)
+		        	   System.out.print(d[2][j1]+" ");
+		        System.out.println();
+		        
+		        int m=0;
+		        int sumRow4= sumRow(d,m);
+		        int sumCol4= sumCol(d,m);
+		        int sumDig4= sumDig(d,m);
+		      //Checks of values from array d are magic squares
+		        if (sumRow4==sumCol4) {
+		        	if(sumRow4== sumDig4) {
+		        		if(sumCol4== sumDig4) {
+		        			System.out.print("The Magic sum is: " + sumRow4);
+		        			System.out.println();
+		        		}
+		        		
+		        	}
+		        	//Prints rows 1-3 of the fifth array
+		        	System.out.println();
+			        for(int j1 = 0; j1 < e[0].length; j1++)
+			        	   System.out.print(e[0][j1]+" ");
+			        System.out.println();
+			        for(int j1 = 0; j1 < e[1].length; j1++)
+			        	   System.out.print(e[1][j1]+" ");
+			        System.out.println();
+			        for(int j1 = 0; j1 < e[2].length; j1++)
+			        	   System.out.print(e[2][j1]+" ");
+			        System.out.println();
+			        
+			        int w=0;
+			        int sumRow5= sumRow(e,w);
+			        int sumCol5= sumCol(e,w);
+			        int sumDig5= sumDig(e,w);
+			      //Checks of values from array e are magic squares
+			        if (sumRow5==sumCol5) {
+			        	if(sumRow5== sumDig5) {
+			        		if(sumCol5== sumDig5) {
+			        			System.out.print("The Magic sum is: " + sumRow5);
+			        			System.out.println();
+			        		}
+			        		
+			        	}
+	        }
+	    	
+	    	
+	    } 
+	}
+
+}	
+}	
+	
+
